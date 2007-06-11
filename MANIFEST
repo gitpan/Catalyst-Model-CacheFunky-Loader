@@ -1,0 +1,16 @@
+Changes
+MANIFEST
+Makefile.PL
+README
+lib/Catalyst/Model/CacheFunky/Loader.pm
+t/00-load.t
+t/boilerplate.t
+t/pod-coverage.t
+t/pod.t
+t/01_app.t
+t/lib/TestApp/Controller/Root.pm
+t/lib/TestApp/Funky/Context.pm
+t/lib/TestApp/Funky/Date.pm
+t/lib/TestApp/Model/Funky.pm
+t/lib/TestApp.pm
+META.yml                                 Module meta-data (added by MakeMaker)
