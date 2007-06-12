@@ -7,7 +7,7 @@ use NEXT;
 use Module::Recursive::Require;
 use Carp;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub new {
     my $self = shift->NEXT::new(@_);
@@ -16,11 +16,12 @@ sub new {
 
     my $funky_class     = $self->{class};
     my $funky_config    = $self->{initialize_info};
+    my $mrr_args        = $self->{mrr_args} || {};
 
     croak 'You must set class and initialize_info' unless $funky_class && $funky_config ;
 
     my @funkies
-        = Module::Recursive::Require->new()->require_by( $funky_class ); 
+        = Module::Recursive::Require->new( $mrr_args )->require_by( $funky_class ); 
 
     no strict 'refs';
     for my $funky ( @funkies ) {
@@ -48,7 +49,7 @@ Catalyst::Model::CacheFunky::Loader - Load Cache::Funky Modules.
 
 =head1 SYNOPSYS
 
- MyApp::Model::Funky;
+ package MyApp::Model::Funky;
 
  use strict;
  use warnings;
@@ -57,11 +58,12 @@ Catalyst::Model::CacheFunky::Loader - Load Cache::Funky Modules.
  __PACKAGE__->config(
     class            => 'MyApp::CacheFunky', # read all module under MyApp::CacheFunky::*
     initialize_info  => { 'Storage::Simple' => {} } ,
+    mrr_args         => { pah => '/var/www/Common/lib/' } , # option. SEE L<Module::Recursive::Require> new(\%args) 
  );
 
  1;
 
- MyApp::CacheFunky::Foo;
+ package MyApp::CacheFunky::Foo;
 
  use strict;
  use warnings;
@@ -71,7 +73,8 @@ Catalyst::Model::CacheFunky::Loader - Load Cache::Funky Modules.
 
  1;
 
- MyAPpCacheFunky::Users;
+
+ package MyAPpCacheFunky::Users;
 
  use strict;
  use warnings;
@@ -81,7 +84,8 @@ Catalyst::Model::CacheFunky::Loader - Load Cache::Funky Modules.
 
  1;
 
- MyApp::Controller::FooBar;
+
+ package MyApp::Controller::FooBar;
 
  sub foo : Local {
     my ( $s ,$c ) = @_;
