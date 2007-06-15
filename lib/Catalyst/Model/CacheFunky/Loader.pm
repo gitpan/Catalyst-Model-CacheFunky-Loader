@@ -7,7 +7,7 @@ use NEXT;
 use Module::Recursive::Require;
 use Carp;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 sub new {
     my $self = shift->NEXT::new(@_);
@@ -101,7 +101,7 @@ Catalyst::Model::CacheFunky::Loader - Load Cache::Funky Modules.
 
  1;
 
- [% c.forwrd('Model::Funky' ,'foo' ) %]
+ [% c.forward('Model::Funky::Foo' ,'foo' ) %]
 
 =head1 DESCRIPTION
 

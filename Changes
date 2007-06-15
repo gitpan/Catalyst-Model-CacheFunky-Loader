@@ -1,5 +1,8 @@
 Revision history for Catalyst-Model-CacheFunky-Loader
 
+0.04    2007-06-16/00:20:00
+        - update POD
+
 0.03    2007-06-15/22:32:00
         - add Cache::Funky as pre required.
         - update POD
