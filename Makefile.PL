@@ -11,6 +11,7 @@ WriteMakefile(
     PREREQ_PM => {
         'Test::More'                     => 0,
         'Catalyst'                       => 0,
+        'Cache::Funky'                   => 0,
         'Catalyst::Plugin::ConfigLoader' => 0,
         'Module::Recursive::Require'     => 0.04,
     },

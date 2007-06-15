@@ -1,10 +1,11 @@
 # http://module-build.sourceforge.net/META-spec.html
 #XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
 name:         Catalyst-Model-CacheFunky-Loader
-version:      0.02
+version:      0.03
 version_from: lib/Catalyst/Model/CacheFunky/Loader.pm
 installdirs:  site
 requires:
+    Cache::Funky:                  0
     Catalyst:                      0
     Catalyst::Plugin::ConfigLoader: 0
     Module::Recursive::Require:    0.04

@@ -7,7 +7,7 @@ use NEXT;
 use Module::Recursive::Require;
 use Carp;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub new {
     my $self = shift->NEXT::new(@_);
@@ -58,7 +58,7 @@ Catalyst::Model::CacheFunky::Loader - Load Cache::Funky Modules.
  __PACKAGE__->config(
     class            => 'MyApp::CacheFunky', # read all module under MyApp::CacheFunky::*
     initialize_info  => { 'Storage::Simple' => {} } ,
-    mrr_args         => { pah => '/var/www/Common/lib/' } , # option. SEE L<Module::Recursive::Require> new(\%args) 
+    mrr_args         => { path => '/var/www/Common/lib/' } , # option. SEE L<Module::Recursive::Require> new(\%args) 
  );
 
  1;
@@ -85,6 +85,7 @@ Catalyst::Model::CacheFunky::Loader - Load Cache::Funky Modules.
  1;
 
 
+
  package MyApp::Controller::FooBar;
 
  sub foo : Local {
@@ -97,6 +98,10 @@ Catalyst::Model::CacheFunky::Loader - Load Cache::Funky Modules.
     $c->model('Funky::Foo')->delete('foo');
     $c->log->debug( $c->model('Funky::Foo')->foo() );
  }
+
+ 1;
+
+ [% c.forwrd('Model::Funky' ,'foo' ) %]
 
 =head1 DESCRIPTION
 
