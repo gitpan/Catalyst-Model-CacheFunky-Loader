@@ -10,6 +10,8 @@ requires 'Catalyst'                       => 0;
 requires 'Cache::Funky'                   => 0;
 requires 'Catalyst::Plugin::ConfigLoader' => 0;
 requires 'Module::Recursive::Require'     => 0.04;
+requires 'Test::Spelling'                 => 0;
+
 license 'perl';
 auto_install;
 WriteAll;

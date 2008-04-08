@@ -7,7 +7,7 @@ use NEXT;
 use Module::Recursive::Require;
 use Carp;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 sub new {
     my $self  = shift->NEXT::new(@_);
@@ -118,7 +118,7 @@ L<Module::Recursive::Require>
 
 Tomohiro Teranishi <tomohiro.teranishi@gmail.com>
 
-=head1 COPYRIGHT AND LISENCE
+=head1 COPYRIGHT AND LICENSE
 
 Copyright (c) Tomohiro Teranishi, All rights reserved.
 

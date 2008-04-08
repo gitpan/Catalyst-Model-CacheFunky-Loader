@@ -25,3 +25,4 @@ t/lib/TestApp/Funky/Date.pm
 t/lib/TestApp/Model/Funky.pm
 t/pod-coverage.t
 t/pod.t
+t/spelling.t

@@ -14,4 +14,5 @@ requires:
   Catalyst::Plugin::ConfigLoader: 0
   Module::Recursive::Require: 0.04
   Test::More: 0
-version: 0.05
+  Test::Spelling: 0
+version: 0.06
